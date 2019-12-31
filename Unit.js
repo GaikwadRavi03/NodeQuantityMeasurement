@@ -15,8 +15,13 @@ const Weight = {
     KG: 1000, 
     TONNE: 1000000
 };
+const Temprature = {
+    CELSIUS: 1, 
+    FAHRENHEIT: -17.22
+};
 module.exports = {
     length: Length,
     volume: Volume,
-    weight: Weight 
+    weight: Weight,
+    temprature: Temprature
 }

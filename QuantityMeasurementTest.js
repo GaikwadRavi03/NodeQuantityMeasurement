@@ -238,8 +238,8 @@ describe('Weight convert test cases', function () {
     assert.equal(ans, false);
   });
   it('should return not equal when of 1 tonne and 0 tonne.', function () {
-    let weight1 = new quantityMeasurement(Unit.weight.TONNE, 0);
-    let weight2 = new quantityMeasurement(Unit.volume.LIT, 0);
+    let weight1 = new quantityMeasurement(Unit.weight.TONNE, 1);
+    let weight2 = new quantityMeasurement(Unit.weight.TONNE, 0);
     let ans = weight1.compare(weight2);
     assert.equal(ans, false);
   });
@@ -293,5 +293,41 @@ describe('Weight addition test cases', function () {
     let weight2 = new quantityMeasurement(Unit.weight.GM, 10000);
     let ans = weight1.addition(weight2);
     assert.equal(ans, 1010000);
+  });
+});
+
+describe('Temprature convert test cases', function () {
+  it('should return equal when of 1 fara and 1 fara.', function () {
+    let temprature1 = new quantityMeasurement(Unit.temprature.FAHRENHEIT, 1);
+    let temprature2 = new quantityMeasurement(Unit.temprature.FAHRENHEIT, 1);
+    let ans = temprature1.compare(temprature2);
+    assert.equal(ans, true);
+  });
+  it('should return equal when of 1 fara and 0 fara.', function () {
+    let temprature1 = new quantityMeasurement(Unit.temprature.FAHRENHEIT, 1);
+    let temprature2 = new quantityMeasurement(Unit.temprature.FAHRENHEIT, 0);
+    let ans = temprature1.compare(temprature2);
+    assert.equal(ans, false);
+  });
+  it('should return equal when of 1 fara and -17.22 celcious.', function () {
+    let temprature1 = new quantityMeasurement(Unit.temprature.FAHRENHEIT, 1);
+    let temprature2 = new quantityMeasurement(Unit.temprature.CELSIUS, -17.22);
+    let ans = temprature1.compare(temprature2);
+    assert.equal(ans, true);
+  });
+});
+
+describe('Temprature addition test cases', function () {
+  it('should return 2 equal when addition of 1 fara and 1 fara.', function () {
+    let temprature1 = new quantityMeasurement(Unit.temprature.FAHRENHEIT, 1);
+    let temprature2 = new quantityMeasurement(Unit.temprature.FAHRENHEIT, 1);
+    let ans = temprature1.addition(temprature2);
+    assert.equal(ans, 2);
+  });
+  it('should return 2 equal when addition of 1 cel and 1 cel.', function () {
+    let temprature1 = new quantityMeasurement(Unit.temprature.CELSIUS, 1);
+    let temprature2 = new quantityMeasurement(Unit.temprature.CELSIUS, 1);
+    let ans = temprature1.addition(temprature2);
+    assert.equal(ans, 2);
   });
 });
