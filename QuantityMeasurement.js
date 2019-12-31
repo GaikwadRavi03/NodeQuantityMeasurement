@@ -16,5 +16,16 @@ class Measurement {
 			return false;
 		}
 	}
+
+
+	addition(that) {
+		if (this.unit == that.unit) {
+			return this.value + that.value;
+		} else if (this.unit != that.unit) {
+			return this.unit * this.value + that.unit * that.value;
+		} else {
+			return 0;
+		}
+	}
 }
 module.exports = Measurement;

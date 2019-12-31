@@ -2,7 +2,7 @@ var assert = require('assert');
 var quantityMeasurement = require('./QuantityMeasurement');
 var Unit = require('./Unit');
 
-describe('Legth test cases', function () {
+describe('Length compare test cases', function () {
   it('should return equal when 1 feet and 1 feet.', function () {
     let length1 = new quantityMeasurement(Unit.FEET, 1);
     let length2 = new quantityMeasurement(Unit.FEET, 1);
@@ -68,5 +68,50 @@ describe('Legth test cases', function () {
     let length2 = new quantityMeasurement(Unit.INCH, 0.4);
     let ans = length1.compare(length2);
     assert.equal(ans, true);
+  });
+});
+
+describe('Length addition test cases', function () {
+  it('should return 2 when addition of 1 feet and 1 feet.', function () {
+    let length1 = new quantityMeasurement(Unit.FEET, 1);
+    let length2 = new quantityMeasurement(Unit.FEET, 1);
+    let ans = length1.addition(length2);
+    assert.equal(ans, 2);
+  });
+  it('should return equal 2 when addition of 1 inch and 1 inch.', function () {
+    let length1 = new quantityMeasurement(Unit.INCH, 1);
+    let length2 = new quantityMeasurement(Unit.INCH, 1);
+    let ans = length1.addition(length2);
+    assert.equal(ans, 2);
+  });
+  it('should return equal 2 when addition of 1 yard and 1 yard.', function () {
+    let length1 = new quantityMeasurement(Unit.YARD, 1);
+    let length2 = new quantityMeasurement(Unit.YARD, 1);
+    let ans = length1.addition(length2);
+    assert.equal(ans, 2);
+  });
+  it('should return equal 2 when addition of 1 cm and 1 cm.', function () {
+    let length1 = new quantityMeasurement(Unit.CM, 1);
+    let length2 = new quantityMeasurement(Unit.CM, 1);
+    let ans = length1.addition(length2);
+    assert.equal(ans, 2);
+  });
+  it('should return equal 24 when addition of 1 feet and 12 inch.', function () {
+    let length1 = new quantityMeasurement(Unit.FEET, 1);
+    let length2 = new quantityMeasurement(Unit.INCH, 12);
+    let ans = length1.addition(length2);
+    assert.equal(ans, 24);
+  });
+  it('should return equal 48 when addition of 1 feet and 1 yard.', function () {
+    let length1 = new quantityMeasurement(Unit.FEET, 1);
+    let length2 = new quantityMeasurement(Unit.YARD, 1);
+    let ans = length1.addition(length2);
+    assert.equal(ans, 48);
+  });
+  it('should return equal 48 when addition of 1 yard and 36 inch.', function () {
+    let length1 = new quantityMeasurement(Unit.YARD, 1);
+    let length2 = new quantityMeasurement(Unit.INCH, 36);
+    let ans = length1.addition(length2);
+    assert.equal(ans, 72);
   });
 });
