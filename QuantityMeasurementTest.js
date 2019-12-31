@@ -4,68 +4,68 @@ var Unit = require('./Unit');
 
 describe('Length compare test cases', function () {
   it('should return equal when 1 feet and 1 feet.', function () {
-    let length1 = new quantityMeasurement(Unit.FEET, 1);
-    let length2 = new quantityMeasurement(Unit.FEET, 1);
+    let length1 = new quantityMeasurement(Unit.length.FEET, 1);
+    let length2 = new quantityMeasurement(Unit.length.FEET, 1);
     let ans = length1.compare(length2);
     assert.equal(ans, true);
   });
   it('should return equal when 1 inch and 1 inch.', function () {
-    let length1 = new quantityMeasurement(Unit.INCH, 1);
-    let length2 = new quantityMeasurement(Unit.INCH, 1);
+    let length1 = new quantityMeasurement(Unit.length.INCH, 1);
+    let length2 = new quantityMeasurement(Unit.length.INCH, 1);
     let ans = length1.compare(length2);
     assert.equal(ans, true);
   });
   it('should return equal when 1 yard and 1 yard.', function () {
-    let length1 = new quantityMeasurement(Unit.YARD, 1);
-    let length2 = new quantityMeasurement(Unit.YARD, 1);
+    let length1 = new quantityMeasurement(Unit.length.YARD, 1);
+    let length2 = new quantityMeasurement(Unit.length.YARD, 1);
     let ans = length1.compare(length2);
     assert.equal(ans, true);
   });
   it('should return equal when 1 cm and 1 cm.', function () {
-    let length1 = new quantityMeasurement(Unit.CM, 1);
-    let length2 = new quantityMeasurement(Unit.CM, 1);
+    let length1 = new quantityMeasurement(Unit.length.CM, 1);
+    let length2 = new quantityMeasurement(Unit.length.CM, 1);
     let ans = length1.compare(length2);
     assert.equal(ans, true);
   });
   it('should return not equal when 1 feet and 0 feet.', function () {
-    let length1 = new quantityMeasurement(Unit.FEET, 1);
-    let length2 = new quantityMeasurement(Unit.FEET, 0);
+    let length1 = new quantityMeasurement(Unit.length.FEET, 1);
+    let length2 = new quantityMeasurement(Unit.length.FEET, 0);
     let ans = length1.compare(length2);
     assert.equal(ans, false);
   });
   it('should return not equal when 1 inch and 0 inch.', function () {
-    let length1 = new quantityMeasurement(Unit.INCH, 1);
-    let length2 = new quantityMeasurement(Unit.INCH, 0);
+    let length1 = new quantityMeasurement(Unit.length.INCH, 1);
+    let length2 = new quantityMeasurement(Unit.length.INCH, 0);
     let ans = length1.compare(length2);
     assert.equal(ans, false);
   });
   it('should return not equal when 1 yard and 0 yard.', function () {
-    let length1 = new quantityMeasurement(Unit.YARD, 1);
-    let length2 = new quantityMeasurement(Unit.YARD, 0);
+    let length1 = new quantityMeasurement(Unit.length.YARD, 1);
+    let length2 = new quantityMeasurement(Unit.length.YARD, 0);
     let ans = length1.compare(length2);
     assert.equal(ans, false);
   });
   it('should return not equal when 1 cm and 0 cm.', function () {
-    let length1 = new quantityMeasurement(Unit.CM, 1);
-    let length2 = new quantityMeasurement(Unit.CM, 0);
+    let length1 = new quantityMeasurement(Unit.length.CM, 1);
+    let length2 = new quantityMeasurement(Unit.length.CM, 0);
     let ans = length1.compare(length2);
     assert.equal(ans, false);
   });
   it('should return equal when 1 feet and 12 inch.', function () {
-    let length1 = new quantityMeasurement(Unit.FEET, 1);
-    let length2 = new quantityMeasurement(Unit.INCH, 12);
+    let length1 = new quantityMeasurement(Unit.length.FEET, 1);
+    let length2 = new quantityMeasurement(Unit.length.INCH, 12);
     let ans = length1.compare(length2);
     assert.equal(ans, true);
   });
   it('should return equal when 1 yard and 36 inch.', function () {
-    let length1 = new quantityMeasurement(Unit.YARD, 1);
-    let length2 = new quantityMeasurement(Unit.INCH, 36);
+    let length1 = new quantityMeasurement(Unit.length.YARD, 1);
+    let length2 = new quantityMeasurement(Unit.length.INCH, 36);
     let ans = length1.compare(length2);
     assert.equal(ans, true);
   });
   it('should return equal when 1 cm and 0.4 inch.', function () {
-    let length1 = new quantityMeasurement(Unit.CM, 1);
-    let length2 = new quantityMeasurement(Unit.INCH, 0.4);
+    let length1 = new quantityMeasurement(Unit.length.CM, 1);
+    let length2 = new quantityMeasurement(Unit.length.INCH, 0.4);
     let ans = length1.compare(length2);
     assert.equal(ans, true);
   });
@@ -73,45 +73,134 @@ describe('Length compare test cases', function () {
 
 describe('Length addition test cases', function () {
   it('should return 2 when addition of 1 feet and 1 feet.', function () {
-    let length1 = new quantityMeasurement(Unit.FEET, 1);
-    let length2 = new quantityMeasurement(Unit.FEET, 1);
+    let length1 = new quantityMeasurement(Unit.length.FEET, 1);
+    let length2 = new quantityMeasurement(Unit.length.FEET, 1);
     let ans = length1.addition(length2);
     assert.equal(ans, 2);
   });
   it('should return equal 2 when addition of 1 inch and 1 inch.', function () {
-    let length1 = new quantityMeasurement(Unit.INCH, 1);
-    let length2 = new quantityMeasurement(Unit.INCH, 1);
+    let length1 = new quantityMeasurement(Unit.length.INCH, 1);
+    let length2 = new quantityMeasurement(Unit.length.INCH, 1);
     let ans = length1.addition(length2);
     assert.equal(ans, 2);
   });
   it('should return equal 2 when addition of 1 yard and 1 yard.', function () {
-    let length1 = new quantityMeasurement(Unit.YARD, 1);
-    let length2 = new quantityMeasurement(Unit.YARD, 1);
+    let length1 = new quantityMeasurement(Unit.length.YARD, 1);
+    let length2 = new quantityMeasurement(Unit.length.YARD, 1);
     let ans = length1.addition(length2);
     assert.equal(ans, 2);
   });
   it('should return equal 2 when addition of 1 cm and 1 cm.', function () {
-    let length1 = new quantityMeasurement(Unit.CM, 1);
-    let length2 = new quantityMeasurement(Unit.CM, 1);
+    let length1 = new quantityMeasurement(Unit.length.CM, 1);
+    let length2 = new quantityMeasurement(Unit.length.CM, 1);
     let ans = length1.addition(length2);
     assert.equal(ans, 2);
   });
   it('should return equal 24 when addition of 1 feet and 12 inch.', function () {
-    let length1 = new quantityMeasurement(Unit.FEET, 1);
-    let length2 = new quantityMeasurement(Unit.INCH, 12);
+    let length1 = new quantityMeasurement(Unit.length.FEET, 1);
+    let length2 = new quantityMeasurement(Unit.length.INCH, 12);
     let ans = length1.addition(length2);
     assert.equal(ans, 24);
   });
   it('should return equal 48 when addition of 1 feet and 1 yard.', function () {
-    let length1 = new quantityMeasurement(Unit.FEET, 1);
-    let length2 = new quantityMeasurement(Unit.YARD, 1);
+    let length1 = new quantityMeasurement(Unit.length.FEET, 1);
+    let length2 = new quantityMeasurement(Unit.length.YARD, 1);
     let ans = length1.addition(length2);
     assert.equal(ans, 48);
   });
   it('should return equal 48 when addition of 1 yard and 36 inch.', function () {
-    let length1 = new quantityMeasurement(Unit.YARD, 1);
-    let length2 = new quantityMeasurement(Unit.INCH, 36);
+    let length1 = new quantityMeasurement(Unit.length.YARD, 1);
+    let length2 = new quantityMeasurement(Unit.length.INCH, 36);
     let ans = length1.addition(length2);
     assert.equal(ans, 72);
+  });
+});
+
+describe('Volume convert test cases', function () {
+  it('should return equal when of 1 ml and 1 ml.', function () {
+    let volume1 = new quantityMeasurement(Unit.volume.ML, 1);
+    let volume2 = new quantityMeasurement(Unit.volume.ML, 1);
+    let ans = volume1.compare(volume2);
+    assert.equal(ans, true);
+  });
+  it('should return not equal when of 1 ml and 0 ml.', function () {
+    let volume1 = new quantityMeasurement(Unit.volume.ML, 1);
+    let volume2 = new quantityMeasurement(Unit.volume.ML, 0);
+    let ans = volume1.compare(volume2);
+    assert.equal(ans, false);
+  });
+  it('should return equal when of 1 lit and 1 lit.', function () {
+    let volume1 = new quantityMeasurement(Unit.volume.LIT, 1);
+    let volume2 = new quantityMeasurement(Unit.volume.LIT, 1);
+    let ans = volume1.compare(volume2);
+    assert.equal(ans, true);
+  });
+  it('should return not equal when of 1 litr and 0 litr.', function () {
+    let volume1 = new quantityMeasurement(Unit.volume.LIT, 1);
+    let volume2 = new quantityMeasurement(Unit.volume.LIT, 0);
+    let ans = volume1.compare(volume2);
+    assert.equal(ans, false);
+  });
+  it('should return equal when of 1 gallon and 1 gallon.', function () {
+    let volume1 = new quantityMeasurement(Unit.volume.GALLON, 1);
+    let volume2 = new quantityMeasurement(Unit.volume.GALLON, 1);
+    let ans = volume1.compare(volume2);
+    assert.equal(ans, true);
+  });
+  it('should return not equal when of 1 gallon and 0 gallon.', function () {
+    let volume1 = new quantityMeasurement(Unit.volume.GALLON, 1);
+    let volume2 = new quantityMeasurement(Unit.volume.GALLON, 0);
+    let ans = volume1.compare(volume2);
+    assert.equal(ans, false);
+  });
+  it('should return equal when of 1 litr and 1000 ml.', function () {
+    let volume1 = new quantityMeasurement(Unit.volume.LIT, 1);
+    let volume2 = new quantityMeasurement(Unit.volume.ML, 1000);
+    let ans = volume1.compare(volume2);
+    assert.equal(ans, true);
+  });
+  it('should return equal when of 1 gallon and 0 ml.', function () {
+    let volume1 = new quantityMeasurement(Unit.volume.GALLON, 1);
+    let volume2 = new quantityMeasurement(Unit.volume.ML, 3785.41);
+    let ans = volume1.compare(volume2);
+    assert.equal(ans, true);
+  });
+});
+describe('Voulme addition test cases', function () {
+  it('should return 2 when addition of 1 ml and 1 ml.', function () {
+    let volume1 = new quantityMeasurement(Unit.volume.ML, 1);
+    let volume2 = new quantityMeasurement(Unit.volume.ML, 1);
+    let ans = volume1.addition(volume2);
+    assert.equal(ans, 2);
+  });
+  it('should return 2 when addition of 1 litr and 1 litr.', function () {
+    let volume1 = new quantityMeasurement(Unit.volume.LIT, 1);
+    let volume2 = new quantityMeasurement(Unit.volume.LIT, 1);
+    let ans = volume1.addition(volume2);
+    assert.equal(ans, 2);
+  });
+  it('should return 2 when addition of 1 gallon and 1 gallon.', function () {
+    let volume1 = new quantityMeasurement(Unit.volume.GALLON, 1);
+    let volume2 = new quantityMeasurement(Unit.volume.GALLON, 1);
+    let ans = volume1.addition(volume2);
+    assert.equal(ans, 2);
+  });
+  it('should return 10010 when addition of 10 ml and 10 litr.', function () {
+    let volume1 = new quantityMeasurement(Unit.volume.ML, 10);
+    let volume2 = new quantityMeasurement(Unit.volume.LIT, 10);
+    let ans = volume1.addition(volume2);
+    assert.equal(ans, 10010);
+  });
+  it('should return 37864 when addition of 10 ml and 10 gallon.', function () {
+    let volume1 = new quantityMeasurement(Unit.volume.GALLON, 10);
+    let volume2 = new quantityMeasurement(Unit.volume.ML, 10);
+    let ans = volume1.addition(volume2);
+    assert.equal(ans, 37864.1);
+  });
+  it('should return 13785 when addition of 1 gallon and 10 litr.', function () {
+    let volume1 = new quantityMeasurement(Unit.volume.GALLON, 1);
+    let volume2 = new quantityMeasurement(Unit.volume.LIT, 10);
+    let ans = volume1.addition(volume2);
+    assert.equal(ans, 13785.41);
   });
 });
