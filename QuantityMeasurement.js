@@ -17,6 +17,17 @@ class Measurement {
 		}
 	}
 
+	compareCelcius(that) {
+		if (this.unit == that.unit) {
+			return this.value == that.value;
+		} else if (that.unit == 'fahrenheit') {
+			return (this.value == (that.value - 32) * 5 / 9);
+		} else if (that.unit == 'celsius') {
+			return (this.value == (that.value * 9 / 5) + 32);
+		} else {
+			return false;
+		}
+	}
 
 	addition(that) {
 		if (this.unit == that.unit) {
