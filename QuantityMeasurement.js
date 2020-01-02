@@ -17,7 +17,7 @@ class Measurement {
 		}
 	}
 
-	compareCelcius(that) {
+	compareTemprature(that) {
 		if (this.unit == that.unit) {
 			return this.value == that.value;
 		} else if (that.unit == 'fahrenheit') {
